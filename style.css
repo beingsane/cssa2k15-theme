@@ -35,7 +35,7 @@ h1, h2 {
 
 h1 {
 	font-size:36px;
-	margin-bottom:5px;
+	margin-bottom:15px;
 }
 
 h3 {
@@ -90,8 +90,6 @@ footer#footer * {
 	line-height:75px;
 }
 
-
-
 @media all and (min-width:1024px) {
 	#wrapper {
 		width:1024px;
@@ -100,7 +98,7 @@ footer#footer * {
 	}
 	#wrapper > header {
 		position:fixed;
-		top:57px;
+		top:25px;
 		width:1024px;
 		height:75px;
 		background-color:rgb(59,110,155);
@@ -125,7 +123,7 @@ footer#footer * {
 	}
 	#wrapper > header {
 		position:fixed;
-		top:57px;
+		top:25px;
 		width:100%;
 		height:75px;
 		background-color:rgb(59,110,155);
@@ -145,7 +143,7 @@ footer#footer * {
 
 @media all and (min-width:640px) {
 	div#lightband {
-		height:50px;
+		height:75px;
 	}
 
 	div.logo {
@@ -184,10 +182,11 @@ footer#footer * {
 		width:100%;
 		height:75px;
 		background-color:rgb(59,110,155);
+		z-index:99;
 	}
 	
 	div#lightband {
-		height:21px;
+		height:50px;
 	}
 
 	div.logo {
@@ -220,7 +219,11 @@ footer#footer * {
 	}
 
 	.menu {
-		margin-left:100px;
+		margin-left:20px;
+	}
+
+	#branding > .logo {
+		display:none;
 	}
 }
 
@@ -279,8 +282,9 @@ li.menu-item:hover .sub-menu, .sub-menu:hover, .sub-menu *:hover {
 }
 
 div.logo {
+	left:25px;
 	position:absolute;
-	background-image:url('/wp-content/uploads/2015/01/CSSA-Logo-C-Emblem.png');
+	background-image:url('http://aofbrea.ch/cssa/wp-content/uploads/2015/01/CSSA-Logo-C-Emblem.png');
 	background-size:cover;
 	z-index:50;
 	cursor:pointer;
@@ -306,7 +310,7 @@ input#s {
 	border:none;
 	outline:none;
 	background-color:rgba(255,255,255,0.3);
-	background-image:url('/wp-content/uploads/2015/01/search.png');
+	background-image:url('http://aofbrea.ch/cssa/wp-content/uploads/2015/01/search.png');
 	background-repeat:no-repeat;
 	background-position:100% 0%;
 	background-size:contain;
@@ -351,7 +355,7 @@ div#darkband-footer {
 
 div#lightband {
 	max-width:1024px;
-	top:25px;
+	top:0;
 	position:fixed;
 	width:100%;
 	background:#eee;
@@ -372,6 +376,10 @@ section#content article {
 
 section#content article:nth-child(even) {
 	background-color:rgba(255,255,255,0.75);
+}
+
+article header > h2 {
+	line-height:26px;
 }
 
 article h2 {
@@ -454,9 +462,11 @@ div.comment-author, div.comment-meta {
 div.comment-author {
 	font-size:18px;
 	padding-top:2px;
+	border-top-right-radius:18px;
 }
 
 div.comment-meta {
+	border-bottom-right-radius:18px;
 	font-size:12px;
 	padding-bottom:2px;
 	margin-bottom:10px;
@@ -464,10 +474,6 @@ div.comment-meta {
 
 div.comment-author a, div.comment-meta a {
 	color:white;
-}
-
-div.vcard img {
-	margin-right:2px;
 }
 
 h3.comments-title {
@@ -501,6 +507,10 @@ div.nav-bottom, div.nav-previous, div.nav-next {
 	transition:0.1s linear;
 }
 
+.nav-previous {
+	clear:both;
+}
+
 div.nav-bottom a, div.nav-previous a, div.nav-next a {
 	font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight:700;
@@ -529,3 +539,20 @@ header.header {
 .post > header > h1 > a, .page > header > h1 > a {
 	line-height:36px;
 }
+
+#site-title > a {
+	opacity:0;
+}
+
+section.entry-content ul {
+	list-style-position:inside;
+}
+
+img.avatar {
+	border-radius:50%;
+	width:22px;
+	height:22px;
+}
+
+
+
