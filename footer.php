@@ -30,8 +30,12 @@ else {
 	var navback = document.getElementById('nav-previous');
 }
 
-var linkPrev = navback.getElementsByTagName('a')[0];
-
+var linkPrev;
+if (navback) {
+	if (navback.getElementsByTagName('a')) {
+		linkPrev = navback.getElementsByTagName('a')[0];
+	}
+}
 if (linkPrev != undefined) {
 	navback.addEventListener('click', function() {window.location = linkPrev.href;}, false);
 }
@@ -45,16 +49,23 @@ else {
 	var navnext = document.getElementById('nav-next');
 }
 
-var linkNext = navnext.getElementsByTagName('a')[0];
+var linkNext;
+
+if (navnext) {
+	if (navnext.getElementsByTagName('a')) {
+		var linkNext = navnext.getElementsByTagName('a')[0];
+	}
+}
+
 if (linkNext != undefined) {
 	navnext.addEventListener('click', function() {window.location = linkNext.href;}, false);
 }
 
-if (navback.getElementsByTagName('a').length == 0) {
+if (navback) {
 	navback.style.display = "none";
 }
 
-if (navnext.getElementsByTagName('a').length == 0) {
+if (navnext) {
 	navnext.style.display = "none";
 }
 
@@ -62,22 +73,35 @@ if (navnext.getElementsByTagName('a').length == 0) {
 // their containers. very far from perfect but it does the job more than 9 times
 // out of ten so whatever.
 window.onresize = window.onload = function() {
-	while (linkPrev.offsetWidth >= navback.offsetWidth) {
-		text = linkPrev.text.split(" ");
-		for (var i = 0; i < 5; i++) {
-			text.pop();
+	if (!(document.getElementsByTagName('body')[0].className.indexOf('home') >= -1)) {
+		if (navback) {
+			while (linkPrev.offsetWidth >= navback.offsetWidth) {
+				text = linkPrev.text.split(" ");
+				for (var i = 0; i < 5; i++) {
+					text.pop();
+				}
+				linkPrev.text = text.join(" ") + " [...]";
+			}
 		}
-		linkPrev.text = text.join(" ") + " [...]";
-	}
 
-	while (linkNext.offsetWidth >= navnext.offsetWidth) {
-		text = linkNext.text.split(" ");
-		for (var i = 0; i < 5; i++) {
-			text.pop();
+		if (navnext) {
+			while (linkNext.offsetWidth >= navnext.offsetWidth) {
+				text = linkNext.text.split(" ");
+				for (var i = 0; i < 5; i++) {
+					text.pop();
+				}
+				linkNext.text = text.join(" ") + " [...] »";
+			}
 		}
-		linkNext.text = text.join(" ") + " [...] »";
 	}
 }
+
+var header = document.getElementById('header');
+
+if (document.getElementById('wpadminbar') !== null) {
+	header.style.top="57px";
+}
+
 </script>
 </body>
 </html>
