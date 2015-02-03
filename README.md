@@ -2,6 +2,8 @@
 
 An updated, overhauled WordPress theme for uOttawa's CSSA (comp sci student's assoc.). Based off the awesome BlankSlate theme by TidyThemes.
 
+![Preview of CSSA2k15 theme](./screenshot.png =650x)
+
 #####Caveats, warnings, how to not break this theme
 
 **BE CAREFUL WITH YOUR SITE'S MENUS.**
