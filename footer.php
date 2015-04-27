@@ -61,19 +61,20 @@ if (linkNext != undefined) {
 	navnext.addEventListener('click', function() {window.location = linkNext.href;}, false);
 }
 
-if (navback) {
+/*if (navback) {
 	navback.style.display = "none";
 }
 
 if (navnext) {
 	navnext.style.display = "none";
-}
+}*/
 
 // simple algo to shorten strigs in the nav controls if they overflow
 // their containers. very far from perfect but it does the job more than 9 times
 // out of ten so whatever.
 window.onresize = window.onload = function() {
-	if (!(document.getElementsByTagName('body')[0].className.indexOf('home') >= -1)) {
+	// determine if we're on the homepage or not (run only if not)
+	if (document.getElementsByTagName('body')[0].className.indexOf('home') >= -1) {
 		if (navback) {
 			while (linkPrev.offsetWidth >= navback.offsetWidth) {
 				text = linkPrev.text.split(" ");
