@@ -566,10 +566,17 @@ img.avatar {
  * Awesome styles for flexbox on about page. Template HTML looks like this:
 
 <li>
-<img src="<your image source>"><p>
-<h3>POSITION NAME</h3>
-Some description of arbitrary length. Don't worry about the size - I've got that covered for you, bro.
-</p>
+	<div>
+		<div class="front">
+			<img src="<your image source>"><p>
+			<h3>POSITION NAME</h3>
+				Basic info
+			</p>
+			</div>
+		<div class="back">
+			Personal write-up
+		</div>
+	</div>
 </li>
 
  *
