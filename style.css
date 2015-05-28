@@ -289,7 +289,7 @@ li.menu-item:hover .sub-menu, .sub-menu:hover, .sub-menu *:hover {
 div.logo {
 	left:25px;
 	position:absolute;
-	background-image:url('http://aofbrea.ch/cssa/wp-content/uploads/2015/01/CSSA-Logo-C-Emblem.png');
+	background-image:url('http://cssa-aei.ca/wp-content/uploads/2015/05/CSSA-Logo-C-Emblem.png');
 	background-size:cover;
 	z-index:50;
 	cursor:pointer;
@@ -315,7 +315,7 @@ input#s {
 	border:none;
 	outline:none;
 	background-color:rgba(255,255,255,0.3);
-	background-image:url('http://aofbrea.ch/cssa/wp-content/uploads/2015/01/search.png');
+	background-image:url('/wp-content/uploads/2015/05/search.png');
 	background-repeat:no-repeat;
 	background-position:100% 0%;
 	background-size:contain;
@@ -561,3 +561,99 @@ img.avatar {
 
 
 
+/*
+ *
+ * Awesome styles for flexbox on about page. Template HTML looks like this:
+
+<li>
+<img src="<your image source>"><p>
+<h3>POSITION NAME</h3>
+Some description of arbitrary length. Don't worry about the size - I've got that covered for you, bro.
+</p>
+</li>
+
+ *
+ */
+
+
+.aboutExec ul {
+	width:100%;
+	min-height:200px;
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;	
+}
+
+.aboutExec ul li {
+	margin:5px;
+	width:350px;
+	max-width:525px;
+	flex-basis:main-size;
+	flex-grow:1.5;
+	flex-shrink:0.7;
+	background-color:#eee;
+	height:200px;
+	border:1px solid #bbb;
+	perspective:750px;
+	clear:both;
+	position:relative;
+}
+
+.aboutExec ul li > div {
+	height:100%;
+	transition:0.5s;
+	transform-style:preserve-3d;
+	position:relative;
+}
+
+.aboutExec ul li:hover > div {
+	transform:rotateY(180deg);
+}
+
+.aboutExec ul li img {
+	float:left;
+	border:none;
+	max-height:100%;
+	width:auto;
+}
+
+.aboutExec ul li h3 {
+	float:left;
+	margin:0 5px 0 5px;
+}
+
+.aboutExec ul li p {
+	font-size:14px;
+	position:relative;
+	max-height:150px;
+	width:69%;
+	overflow:hidden;
+	float:left;
+	margin:0 5px 0 5px;
+}
+
+.aboutExec ul li .front {
+	z-index:2;
+	right:0;
+	transform:rotateY(0deg);
+	width:100%;
+	height:100%;
+}
+
+.aboutExec ul li .front, .aboutExec ul li .back {
+	backface-visibility:hidden;
+	position:absolute;
+	background:white;
+}
+
+.aboutExec ul li .back {
+	width:calc(100% - 30px);
+	height:calc(100% - 30px);
+	transform:rotateY(180deg);
+	padding:15px;
+}
+
+
+section#content article.page {
+	padding-top:20px;
+}
