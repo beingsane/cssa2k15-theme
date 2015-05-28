@@ -11,7 +11,7 @@ If the menu bar overflows, the whole site'll look like crap, and we can't have t
 **Images will not display in the main index feed.**
 This is to keep the blog minimal. At the same time, it passively forces authors to use the `Description` field while creating posts and pages so that the index isn't just a giant, horrifying wall of text.
 
-**Use the descriptiong field or the `<!--more--> comment**
+**Use the description field or the `<!--more-->` comment**
 
 Keep it short -- when writing a long post, delimit what you want to show on the index using `<!--more-->` in the "Text" editing mode of a post.
 
